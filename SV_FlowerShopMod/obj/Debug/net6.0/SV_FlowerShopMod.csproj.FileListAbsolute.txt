@@ -1,0 +1,5 @@
+/Users/anna/RiderProjects/SV_FlowerShopMod/SV_FlowerShopMod/obj/Debug/net6.0/SV_FlowerShopMod.csproj.AssemblyReference.cache
+/Users/anna/RiderProjects/SV_FlowerShopMod/SV_FlowerShopMod/obj/Debug/net6.0/SV_FlowerShopMod.GeneratedMSBuildEditorConfig.editorconfig
+/Users/anna/RiderProjects/SV_FlowerShopMod/SV_FlowerShopMod/obj/Debug/net6.0/SV_FlowerShopMod.AssemblyInfoInputs.cache
+/Users/anna/RiderProjects/SV_FlowerShopMod/SV_FlowerShopMod/obj/Debug/net6.0/SV_FlowerShopMod.AssemblyInfo.cs
+/Users/anna/RiderProjects/SV_FlowerShopMod/SV_FlowerShopMod/obj/Debug/net6.0/SV_FlowerShopMod.csproj.CoreCompileInputs.cache
