@@ -4,7 +4,10 @@ using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewModdingAPI.Utilities;
 using StardewValley;
-
+using xTile;
+using xTile.Tiles;
+using xTile.Layers;
+using xTile.Dimensions;
 namespace SV_FLowerShopMod
 {
     /// <summary>The mod entry point.</summary>
@@ -17,24 +20,38 @@ namespace SV_FLowerShopMod
         /// <param name="helper">Provides simplified APIs for writing mods.</param>
         public override void Entry(IModHelper helper)
         {
-            helper.Events.Input.ButtonPressed += this.OnButtonPressed;
+            helper.Events.Content.AssetRequested += this.OnAssetRequested;
         }
 
+        private void OnAssetRequested(object? sender, AssetRequestedEventArgs e)
+        {
+            if (e.Name.IsEquivalentTo("Maps/Forest"))
+            {
+                e.Edit(asset =>
+                {
+                    IAssetDataForMap editor = asset.AsMap();
+                    Map map = editor.Data;
 
-        /*********
-         ** Private methods
-         *********/
-        /// <summary>Raised after the player presses a button on the keyboard, controller, or mouse.</summary>
-        /// <param name="sender">The event sender.</param>
-        /// <param name="e">The event data.</param>
-        private void OnButtonPressed(object? sender, ButtonPressedEventArgs e)
+                    // your code here
+                });
+            }
+        }
+        private Tile GetTile(Map map, string layerName, int tileX, int tileY)
+        {
+            Layer layer = map.GetLayer(layerName);
+            Location pixelPosition = new Location(tileX * Game1.tileSize, tileY * Game1.tileSize);
+
+            return layer.PickTile(pixelPosition, Game1.viewport.Size);
+        }
+
+        /*private void OnButtonPressed(object? sender, ButtonPressedEventArgs e)
         {
             // ignore if player hasn't loaded a save yet
             if (!Context.IsWorldReady)
                 return;
 
-            // print button presses to the console window
+            // idk if we need this later but i jsut tagged it out
             this.Monitor.Log($"{Game1.player.Name} pressed {e.Button}.", LogLevel.Debug);
-        }
+        } */ 
     }
 }

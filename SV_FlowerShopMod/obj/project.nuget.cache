@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "pjpfr9gNeaM=",
+  "dgSpecHash": "x70qc/LDOzY=",
   "success": true,
   "projectFilePath": "/Users/anna/RiderProjects/SV_FlowerShopMod/SV_FlowerShopMod/SV_FlowerShopMod.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/anna/.nuget/packages/pathoschild.stardew.modbuildconfig/4.4.0/pathoschild.stardew.modbuildconfig.4.4.0.nupkg.sha512"
+  ],
   "logs": []
 }
