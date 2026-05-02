@@ -4,6 +4,7 @@ using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewModdingAPI.Utilities;
 using StardewValley;
+using StardewValley.Locations;
 using xTile;
 using xTile.Tiles;
 using xTile.Layers;
@@ -26,15 +27,9 @@ namespace SV_FLowerShopMod
 
         private void OnAssetRequested(object? sender, AssetRequestedEventArgs e)
         {
-            if (e.Name.IsEquivalentTo("Maps/Forest"))
+            if (e.Name.IsEquivalentTo("Maps/Forest")
             {
-                e.Edit(asset =>
-                {
-                    IAssetDataForMap editor = asset.AsMap();
-                    Map map = editor.Data;
-
-                    var customMap = this.Helper.Content.Load<Map>("assets/Forest.tmx");
-                });
+                e.LoadFromModFile<Map>("assets/Forest.tmx", AssetLoadPriority.Medium);
             }
 
             if (e.Name.IsEquivalentTo("Maps/FlowerMapInterior"))
@@ -42,10 +37,10 @@ namespace SV_FLowerShopMod
                 e.Edit(asset =>
                 {
                     IAssetDataForMap editor = asset.AsMap();
-                    Map map = editor.Data;
                     var customMap = this.Helper.Content.Load<Map>("assets/FlowerMapInterior.tmx");
+                    editor.PatchMap(customMap);
                     //make sure to name is FlowerMapInterior bc i marked warp to that map
-                };
+                });
             }
         }
         private Tile GetTile(Map map, string layerName, int tileX, int tileY)
