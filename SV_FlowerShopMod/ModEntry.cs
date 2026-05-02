@@ -32,7 +32,7 @@ namespace SV_FLowerShopMod
                     IAssetDataForMap editor = asset.AsMap();
                     Map map = editor.Data;
 
-                    // your code here
+                    var customMap = this.Helper.Content.Load<Map>("assets/FlowerShop.tmx");
                 });
             }
         }
