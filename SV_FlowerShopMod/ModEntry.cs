@@ -21,6 +21,7 @@ namespace SV_FLowerShopMod
         public override void Entry(IModHelper helper)
         {
             helper.Events.Content.AssetRequested += this.OnAssetRequested;
+            helper.Events.Content.AssetRequested += this.OnAssetRequested;
         }
 
         private void OnAssetRequested(object? sender, AssetRequestedEventArgs e)
@@ -32,8 +33,19 @@ namespace SV_FLowerShopMod
                     IAssetDataForMap editor = asset.AsMap();
                     Map map = editor.Data;
 
-                    var customMap = this.Helper.Content.Load<Map>("assets/FlowerShop.tmx");
+                    var customMap = this.Helper.Content.Load<Map>("assets/Forest.tmx");
                 });
+            }
+
+            if (e.Name.IsEquivalentTo("Maps/FlowerMapInterior"))
+            {
+                e.Edit(asset =>
+                {
+                    IAssetDataForMap editor = asset.AsMap();
+                    Map map = editor.Data;
+                    var customMap = this.Helper.Content.Load<Map>("assets/FlowerMapInterior.tmx");
+                    //make sure to name is FlowerMapInterior bc i marked warp to that map
+                };
             }
         }
         private Tile GetTile(Map map, string layerName, int tileX, int tileY)
@@ -44,14 +56,16 @@ namespace SV_FLowerShopMod
             return layer.PickTile(pixelPosition, Game1.viewport.Size);
         }
 
-        /*private void OnButtonPressed(object? sender, ButtonPressedEventArgs e)
+        private void OnButtonPressed(object? sender, ButtonPressedEventArgs e)
+         //https://gamedev.stackexchange.com/questions/157885/smapi-add-warp-to-existing-map-stardew-valley
         {
             // ignore if player hasn't loaded a save yet
             if (!Context.IsWorldReady)
                 return;
+            if (!e.Button.IsActionButton()) return; //not action/ready
 
             // idk if we need this later but i jsut tagged it out
             this.Monitor.Log($"{Game1.player.Name} pressed {e.Button}.", LogLevel.Debug);
-        } */ 
+        } 
     }
 }
