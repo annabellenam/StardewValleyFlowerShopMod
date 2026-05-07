@@ -3,8 +3,12 @@
   "Author": "Anusha and Annabelle",
   "Version": "4.0.0",
   "Description": "<One or two sentences about the mod>",
-  "UniqueID": "AnushaAnnabelle.SV_FlowerShopMod",
+  "UniqueID": "SV_FlowerShopMod",
   "EntryDll": "SV_FlowerShopMod.dll",
   "MinimumApiVersion": "4.0.0",
-  "UpdateKeys": []
-}
+  "UpdateKeys": [],
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  
+  }
+} 

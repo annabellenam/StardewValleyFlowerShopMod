@@ -3,3 +3,6 @@
 /Users/anna/RiderProjects/SV_FlowerShopMod/SV_FlowerShopMod/obj/Debug/net6.0/SV_FlowerShopMod.AssemblyInfoInputs.cache
 /Users/anna/RiderProjects/SV_FlowerShopMod/SV_FlowerShopMod/obj/Debug/net6.0/SV_FlowerShopMod.AssemblyInfo.cs
 /Users/anna/RiderProjects/SV_FlowerShopMod/SV_FlowerShopMod/obj/Debug/net6.0/SV_FlowerShopMod.csproj.CoreCompileInputs.cache
+/Users/anna/RiderProjects/SV_FlowerShopMod/SV_FlowerShopMod/bin/Debug/net6.0/SV_FlowerShopMod.deps.json
+/Users/anna/RiderProjects/SV_FlowerShopMod/SV_FlowerShopMod/bin/Debug/net6.0/SV_FlowerShopMod.dll
+/Users/anna/RiderProjects/SV_FlowerShopMod/SV_FlowerShopMod/obj/Debug/net6.0/SV_FlowerShopMod.dll

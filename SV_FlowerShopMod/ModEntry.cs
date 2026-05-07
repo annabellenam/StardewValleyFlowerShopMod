@@ -27,12 +27,12 @@ namespace SV_FLowerShopMod
 
         private void OnAssetRequested(object? sender, AssetRequestedEventArgs e)
         {
-            if (e.Name.IsEquivalentTo("Maps/Forest")
+            if (e.Name.IsEquivalentTo("Maps/Forest"))
             {
-                e.LoadFromModFile<Map>("assets/Forest.tmx", AssetLoadPriority.Medium);
+                e.LoadFromModFile<Map>("assets/ForestwithFlowerShop.tmx", AssetLoadPriority.Medium);
             }
 
-            if (e.Name.IsEquivalentTo("Maps/FlowerMapInterior"))
+            /*if (e.Name.IsEquivalentTo("Maps/FlowerMapInterior"))
             {
                 e.Edit(asset =>
                 {
@@ -41,7 +41,7 @@ namespace SV_FLowerShopMod
                     editor.PatchMap(customMap);
                     //make sure to name is FlowerMapInterior bc i marked warp to that map
                 });
-            }
+            }*/
         }
         private Tile GetTile(Map map, string layerName, int tileX, int tileY)
         {
